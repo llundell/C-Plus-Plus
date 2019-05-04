@@ -21,7 +21,7 @@ int multiply(int x, int res[], int res_size) {
 
 	// One by one multiply n with
 	// individual digits of res[]
-	for (int i = 0; i < res_size; i++) {
+	for (auto i:irange(0,res_size-1)) {
 		int prod = res[i] * x + carry;
 
 		// Store last digit of
@@ -66,7 +66,7 @@ void power(int x, int n)
 
 	// Multiply x n times
 	// (x^n = x*x*x....n times)
-	for (int i = 2; i <= n; i++)
+	for (auto i:irange(2,n-1))
 		res_size = multiply(x, res, res_size);
 
 	cout << x << "^" << n << " = ";
